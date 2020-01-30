@@ -34,16 +34,44 @@ class Product extends Controller
 
         $validator = Validator::make($input, [
             'title' => 'required|string|max:255',
-            'description' => 'required|string|max:255'
+            'description' => 'required|string|max:255',
+            'status' => 'required|string|in:clearance,discontinued,active,backorder',
+            'warehouse_id' => 'required|numeric|gt:0',
+            'stock' => 'required|numeric|min:0',
+            'unit_price' => 'required|numeric|min:0'
         ]);
-
 
         if($validator->fails()){
             return response()->json(['errors'=>$validator->errors()]);
         }
 
+        try {
 
-        $product = \App\Product::create($input);
+            DB::beginTransaction();
+
+            $product = \App\Product::create([
+                "title" => $input['title'],
+                "description" => $input['description'],
+                "status" => $input['status'],
+            ]);
+    
+            $answer = $product->prices()->create([
+                "price" => $input['unit_price']
+            ]);
+    
+            $warehouse_product = $product->warehouse_product()->create([
+                "warehouse_id" => $input['warehouse_id'],
+                "available_stock" =>$input['stock']
+            ]);
+    
+            DB::commit();
+
+        } catch(\Illuminate\Database\QueryException $exception){
+            
+            DB::rollBack();
+            //TODO this is bad and if I have time i'll fix it
+            return response()->json(['errors'=>'model failed to save']);            
+        }
 
         return response()->json($product->toArray());
     }
@@ -69,17 +97,38 @@ class Product extends Controller
 
         $validator = Validator::make($input, [
             'title' => 'required|string|max:255',
-            'description' => 'required|string|max:255'
+            'description' => 'required|string|max:255',
+            'status' => 'required|string|in:clearance,discontinued,active,backorder',            
+            'unit_price' => 'required|numeric|min:0'
         ]);
 
         if($validator->fails()){
             return response()->json(['errors'=>$validator->errors()]);
         }
 
-        $product->title = $input['title'];
-        $product->description = $input['description'];
-        
-        if( !$product->save() ){            
+        try {
+
+            DB::beginTransaction();
+
+            $product->title = $input['title'];
+            $product->description = $input['description'];
+            $product->status = $input['status'];
+    
+            $answer = $product->prices()->create([
+                "price" => $input['unit_price']
+            ]);
+
+            if( !$product->save() ){            
+                //TODO this is bad and if I have time i'll fix it
+                DB::rollBack();
+                return response()->json(['errors'=>'model failed to save']);            
+            }           
+    
+            DB::commit();
+
+        } catch(\Illuminate\Database\QueryException $exception){
+            
+            DB::rollBack();
             //TODO this is bad and if I have time i'll fix it
             return response()->json(['errors'=>'model failed to save']);            
         }
