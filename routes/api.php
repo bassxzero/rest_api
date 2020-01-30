@@ -21,12 +21,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //TODO need to add rollbacks for controlller that fail part way
 //TODO need correct HTTP codes on responses
 //TODO soft deletes or hard deletes? I'm not 100% what this calls for yet
+//TODO need to create database seeds for testing
 
 
 // Group for version 1 of API
-Route::prefix('v1')->group(function () {
+Route::middleware('auth:api')->prefix('v1')->group(function () {
     // Should probaly create a group for each endpoint
-
+    
     // List 
     Route::get('products', 'Product@index' );
 
@@ -43,6 +44,12 @@ Route::prefix('v1')->group(function () {
     Route::put('products/{id}', 'Product@update' )->where('id', '[0-9]+');
 
 });
+
+Route::post('register', 'ApiAuthController@register' );
+    
+//Route::post('login', 'ApiAuthController@login');
+
+Route::post('login', [ 'as' => 'login', 'uses' => 'ApiAuthController@login']);
 
 // Placeholder for version 2 of API
 Route::prefix('v2')->group(function () {
