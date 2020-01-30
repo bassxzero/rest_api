@@ -1,5 +1,5 @@
 ### A. Explain the structure of your code
-For this project I'm using Laravel 6.0. I believe you all currently use Laravel so I shouldn't need to explain the code structure too much. You should be able to find thing in the typical directories.  
+For this project I'm using Laravel 6.0. I believe you all currently use Laravel so I shouldn't need to explain the code structure too much. You should be able to find things in the typical directories.  
 
 ### B. Any libraries you used and a short explanation on why
 The only thing I'm using that isn't part of the standard Laravel install is **laravel/passport**. I need passport so that I can use Laravel's OAuth2 implementation. 
