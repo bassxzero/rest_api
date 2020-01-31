@@ -11,4 +11,5 @@
 |
 */
 
+//This is route and controller are only here for testing
 Route::get('/', 'HomeController@info');
