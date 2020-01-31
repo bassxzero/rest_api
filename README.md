@@ -59,3 +59,11 @@ I also might had added some documentation for function and such.
 ### F. Any additional comments you have
 
 I've had the flu since Tuesday. I'm not trying to make excuses, but I feel like I could have done better than this. 
+
+
+If you run into an error that says something about "rest_api/storage/oauth-public.key" does not exist or is not readable, run these commands. (Yes I know 777 is bad, but it's easier than trying figure out your specific setup, and finding out what user is going to run the code, and what groups the user is in. Plus you're probably going to delete this directory right after you finish testing it.)
+
+``` bash
+sudo chmod -r 0777 /path/to/your/project/rest_api/vendor
+sudo chmod -r 0777 /path/to/your/project/rest_api/storage
+```
