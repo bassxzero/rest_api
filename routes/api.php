@@ -30,19 +30,19 @@ Route::middleware('auth:api')->prefix('v1')->group(function () {
     // Should probaly create a group for each endpoint
 
     // List 
-    Route::get('products', 'Product@index');
+    Route::get('products', 'ProductController@index');
 
     // Show
-    Route::get('products/{id}', 'Product@show')->where('id', '[0-9]+');
+    Route::get('products/{id}', 'ProductController@show')->where('id', '[0-9]+');
 
     // Delete
-    Route::delete('products/{id}', 'Product@destroy')->where('id', '[0-9]+');
+    Route::delete('products/{id}', 'ProductController@destroy')->where('id', '[0-9]+');
 
     // Create
-    Route::post('products', 'Product@store');
+    Route::post('products', 'ProductController@store');
 
     // Update
-    Route::put('products/{id}', 'Product@update')->where('id', '[0-9]+');
+    Route::put('products/{id}', 'ProductController@update')->where('id', '[0-9]+');
 
 });
 

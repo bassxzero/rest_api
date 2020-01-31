@@ -6,12 +6,13 @@ use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Validator;
 use DB;
+use App\Product;
 
-class Product extends Controller
+class ProductController extends Controller
 {
     public function destroy($id)
     {
-        $product = \App\Product::find($id);
+        $product = Product::find($id);
 
         if ($product === null) {
             return response()->json(null, 404);
@@ -27,7 +28,7 @@ class Product extends Controller
 
     public function index()
     {
-        $products = \App\Product::all();
+        $products = Product::all();
 
         return response()->json($products);
     }
@@ -53,7 +54,7 @@ class Product extends Controller
 
             DB::beginTransaction();
 
-            $product = \App\Product::create([
+            $product = Product::create([
                 "title" => $input['title'],
                 "description" => $input['description'],
                 "status" => $input['status'],
@@ -82,7 +83,7 @@ class Product extends Controller
 
     public function show($id)
     {
-        $product = \App\Product::find($id);
+        $product = Product::find($id);
 
         if ($product === null) {
             return response()->json(null, 404);
@@ -93,7 +94,7 @@ class Product extends Controller
 
     public function update(Request $request, $id)
     {
-        $product = \App\Product::find($id);
+        $product = Product::find($id);
 
         if ($product === null) {
             return response()->json(null, 404);

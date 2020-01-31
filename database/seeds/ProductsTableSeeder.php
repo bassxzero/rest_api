@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Product;
 
 class ProductsTableSeeder extends Seeder
 {
@@ -13,8 +14,8 @@ class ProductsTableSeeder extends Seeder
     {
 
         for( $x = 1; $x < 11; $x++) {
-            
-            $product = \App\Product::create([
+
+            $product = Product::create([
                 "title" => 'Product ' . $x,
                 "description" => 'Description ' . $x,
                 "status" => 'active'

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Warehouse;
 
 class WarehousesTableSeeder extends Seeder
 {
@@ -11,13 +12,13 @@ class WarehousesTableSeeder extends Seeder
      */
     public function run()
     {
-        \App\Warehouse::updateOrCreate([
+        Warehouse::updateOrCreate([
             'name'=>'Eastcoast Warehouse',
             'address'=>'123 east coast',
             'phone_number'=>'111-1111'            
         ]);
-        
-        \App\Warehouse::updateOrCreate([
+
+        Warehouse::updateOrCreate([
             'name'=>'Westcoast Warehouse',
             'address'=>'123 west coast',
             'phone_number'=>'222-2222'            
