@@ -13,12 +13,12 @@ class CreatePricesTable extends Migration
      */
     public function up()
     {
-        Schema::create('prices', function (Blueprint $table) {            
+        Schema::create('prices', function (Blueprint $table) {
 
             $table->bigIncrements('id');
             $table->bigInteger('product_id')->unsigned();
             $table->double('price', 8, 2);
-            
+
             $table->timestamps();
 
             $table->foreign('product_id')

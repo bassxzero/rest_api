@@ -16,7 +16,7 @@ class AddColumnsToProductTable extends Migration
         Schema::table('products', function (Blueprint $table) {
             $table->enum('status', ['clearance', 'discontinued', 'active', 'backorder'])
                 ->after('description')
-                ->default('active');            
+                ->default('active');
         });
     }
 
@@ -28,7 +28,7 @@ class AddColumnsToProductTable extends Migration
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->dropColumn('status');       
+            $table->dropColumn('status');
         });
     }
 }
