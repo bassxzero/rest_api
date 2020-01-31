@@ -10,7 +10,7 @@ The only thing I'm using that isn't part of the standard Laravel install is **la
 
 Clone my projects repo to your test environment.
 ``` bash
-git clone git@github.com:codeforgreenville/hackgreenville-com.git
+git clone git@github.com:bassxzero/rest_api.git
 ```
 
 You need to make a copy of the `.env.example` file and rename it to `.env` at your project root.
@@ -45,5 +45,17 @@ php artisan serve
 ### D. Any additional stuff you added (flex your dev muscle)
 
 ### E. Thoughts on what you would have liked to add if you had the time
+These are the TODO I left in my code so I would probably have worked on these if I had more time. 
+
+//TODO If I have time I will probably create namespaces for the controllers based on the version number
+//TODO need to add rollbacks to controlller that fail part way
+//TODO need correct HTTP codes on responses
+//TODO soft deletes or hard deletes? I'm not 100% what this calls for yet
+//TODO add option to return data in a specific format xml, json, form data, etc
+//TODO I'm not sure if I like my tables relationships right now. Change them???
+
+I also might had added some documentation for function and such.
 
 ### F. Any additional comments you have
+
+I've had the flu since Tuesday. I'm not trying to make excuses, but I feel like I could have done better than this. 
