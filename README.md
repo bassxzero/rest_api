@@ -1,7 +1,7 @@
 ### API Doc https://app.swaggerhub.com/apis/bassxzero7/LaravelAPI/1.0.0
 
 ### A. Explain the structure of your code
-For this project I'm using Laravel 6.0. I believe you all currently use Laravel so I shouldn't need to explain the code structure too much. You should be able to find things in the typical directories.  
+For this project I'm using Laravel 6.0. Laravel wants you to put things in certain places, and it will do that for you if you use the `php artisan` commands to create classes, controllers, models, etc. I put class and etc. in the default storage areas so that anyone who maintains this code should be able to find things if they have used Laravel before.
 
 ### B. Any libraries you used and a short explanation on why
 The only thing I'm using that isn't part of the standard Laravel install is **laravel/passport**. I need passport so that I can use Laravel's OAuth2 implementation. 
@@ -31,6 +31,7 @@ php artisan db:seed
 
 Create a personal access client. (When prompted, you can name it whatever you like.)
 ``` bash
+php artisan passport:install
 php artisan passport:client --personal
 ```
 
@@ -60,11 +61,3 @@ I also might had added some documentation for function and such.
 ### F. Any additional comments you have
 
 I've had the flu since Tuesday. I'm not trying to make excuses, but I feel like I could have done better than this. 
-
-
-If you run into an error that says something about "rest_api/storage/oauth-public.key" does not exist or is not readable, run these commands. 
-
-``` bash
-sudo chmod -r 0777 /path/to/your/project/rest_api/vendor
-sudo chmod -r 0777 /path/to/your/project/rest_api/storage
-```
