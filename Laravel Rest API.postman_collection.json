@@ -1,0 +1,268 @@
+{
+	"info": {
+		"_postman_id": "97b8e531-ecd5-429d-b131-08c964d2b9fd",
+		"name": "Laravel Rest API",
+		"description": "Simple laravel rest api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "List Products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}{{version_tag}}products",
+							"host": [
+								"{{base_url}}{{version_tag}}products"
+							]
+						},
+						"description": "List all products"
+					},
+					"response": []
+				},
+				{
+					"name": "Show Product",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}{{version_tag}}products/1",
+							"host": [
+								"{{base_url}}{{version_tag}}products"
+							],
+							"path": [
+								"1"
+							]
+						},
+						"description": "Request a single product"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\":\"title4\",\n\t\"description\":\"description4\",\n\t\"status\" : \"active\",\n\t\"unit_price\" : \"7\",\n\t\"warehouse_id\" : \"2\",\n    \"stock\" : \"200\"\n}\n"
+						},
+						"url": {
+							"raw": "{{base_url}}{{version_tag}}products",
+							"host": [
+								"{{base_url}}{{version_tag}}products"
+							]
+						},
+						"description": "Create a single product"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}{{version_tag}}products/16",
+							"host": [
+								"{{base_url}}{{version_tag}}products"
+							],
+							"path": [
+								"16"
+							]
+						},
+						"description": "Delete a single product"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\":\"title999\",\n\t\"description\":\"description999\",\n\t\"status\":\"active\",\n\t\"unit_price\":\"120\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}{{version_tag}}products/17",
+							"host": [
+								"{{base_url}}{{version_tag}}products"
+							],
+							"path": [
+								"17"
+							]
+						},
+						"description": "Update a single product based on id"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNzI1ODQ3NjQwMjIzZWJlNmJlNGVkMGNkY2NmMDM4ZmZlZTFhMzdiNGU3YmZlNzg0MDdiNTQwYWNkZjU4ZDdhZTEzNDM4MzRhZjY3ODdkNjUiLCJpYXQiOjE1ODA0MjI3NzEsIm5iZiI6MTU4MDQyMjc3MSwiZXhwIjoxNjEyMDQ1MTcxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QgpdLZzKDcEQNKKiPCcvij8SVYrGrobAJk5qNYypXW4z5Ot5YnDnK6LoUfO7ExT3ah8HZCu2x_ImWrCArfnz93OnUNTgnoF0V7fEedh_pYFaD2SKNxXU22vPKUjaCAl_hjISNzmgU18fcAhCzuuxqEVJ0HT1k7WdGwS8P1C1N4C_9XL2D0wWTSZgvInb5SCVIw5LMvQyGBOviv_U1mF6vopqQSQiJm3KTzlyt-A9kmQIe1_33WenmhSZjzbCJWwpsw7cyEWsvkfXxctqKqrgyMrKP2wNVE5ngC54f2BPMqHUPAg8gRje3BRTS9SclpdnDWUlIFYo17P0nCZ3DvVWg3XfUALXo-gcqPr4NaKmlHPVjak8s52W_15Dg7dyG83TlT-b52BO0p5R1QrvImgTBCgkmpuzGlZ9OWcvBD8qRBV8adF1KH2o3JZYZp58nQbvqVKLfJfCIa7TYd7Qqg_zyN_kTT95yAXw0mFR_v5YG7j6tYcdcYgMwsUqAj_VISD8MwN1eiKQaa0otJhsAXuThjih8wwrknlXk1znz9lYzMSNSLQgv3MAbfL26P0G4JMi3Fk5amnK198nc12giroBb-AP_FTZEIdzRqmpqeTvZ0JrL_MTfTW37Gp88JzZzclPFUKzPVXkxdXGnGKmX5zpbWuYyHOx2e_dmCOfDWrYq68",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4390d92c-5fe9-4702-9a45-6dd3b73c9df0",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "7ef970d3-b385-4f1d-9aa2-f6d898c5ca7c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Misc",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "first@admin.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}login",
+							"host": [
+								"{{base_url}}login"
+							]
+						},
+						"description": "Login and return access token"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "78ca61ef-9d14-404c-8ef2-d3d7feaf7a3e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "176ed010-d524-43f5-8b59-a8d0d479d75a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "84835fba-d1f9-4bcf-809a-0ece61e337cf",
+			"key": "base_url",
+			"value": "http://localhost:8000/api/",
+			"type": "string"
+		},
+		{
+			"id": "8525c43b-78e3-4ada-8710-edebaafbc0dc",
+			"key": "version_tag",
+			"value": "v1/",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
