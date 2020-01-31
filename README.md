@@ -47,12 +47,12 @@ php artisan serve
 ### E. Thoughts on what you would have liked to add if you had the time
 These are the TODO I left in my code so I would probably have worked on these if I had more time. 
 
-//TODO If I have time I will probably create namespaces for the controllers based on the version number
-//TODO need to add rollbacks to controlller that fail part way
-//TODO need correct HTTP codes on responses
-//TODO soft deletes or hard deletes? I'm not 100% what this calls for yet
-//TODO add option to return data in a specific format xml, json, form data, etc
-//TODO I'm not sure if I like my tables relationships right now. Change them???
+//TODO If I have time I will probably create namespaces for the controllers based on the version number  
+//TODO need to add rollbacks to controlller that fail part way  
+//TODO need correct HTTP codes on responses  
+//TODO soft deletes or hard deletes? I'm not 100% what this calls for yet  
+//TODO add option to return data in a specific format xml, json, form data, etc  
+//TODO I'm not sure if I like my tables relationships right now. Change them???  
 
 I also might had added some documentation for function and such.
 
