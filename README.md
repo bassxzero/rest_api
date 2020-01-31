@@ -1,3 +1,5 @@
+### API Doc https://app.swaggerhub.com/apis/bassxzero7/LaravelAPI/1.0.0
+
 ### A. Explain the structure of your code
 For this project I'm using Laravel 6.0. I believe you all currently use Laravel so I shouldn't need to explain the code structure too much. You should be able to find things in the typical directories.  
 
