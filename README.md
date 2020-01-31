@@ -10,7 +10,7 @@ The only thing I'm using that isn't part of the standard Laravel install is **la
 
 Clone my projects repo to your test environment.
 ``` bash
-git clone git@github.com:bassxzero/rest_api.git
+git clone https://github.com/bassxzero/rest_api.git
 ```
 
 You need to make a copy of the `.env.example` file and rename it to `.env` at your project root.
