@@ -43,6 +43,16 @@ Then start your server:
 ``` bash
 php artisan serve
 ```
+To test with postman:   
+    1. Import the postman collection from this repo (Laravel Rest API.postman_collection.json)  
+    2. Under the Misc folder run the Login request. You should recieve a access_token back.   
+    3. Copy the access_token  
+    4. Right click the Product folder  
+    5. Select edit  
+    6. Cick Authorization  
+    7. Under Type select Bearer Token  
+    8. Paste your access_token in the space for Token.   
+    9 You should now be able to run any of the request in the Product folder  
 
 ### D. Any additional stuff you added (flex your dev muscle)
 
